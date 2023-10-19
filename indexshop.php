@@ -8,9 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $phone = $_POST["phone"];
 
 
-  $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=erf4p42dq0r2dxvv";
+  $hostname = "s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
   $username = "h9h1633x6ek8iw6v";
-  $dbPassword = "fjyr5bd0t2ypluj6";
+  $password = "fjyr5bd0t2ypluj6";
+  $port = 3306;
+  $database = "erf4p42dq0r2dxvv";
   
 
   try {
