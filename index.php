@@ -1,7 +1,7 @@
 <?php
-$dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=mciszm142ho9bdsl";
-$username = "xlhesq94xvzyf60h";
-$dbPassword = "NO";
+$dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=erf4p42dq0r2dxvv";
+$username = "h9h1633x6ek8iw6v";
+$dbPassword = "fjyr5bd0t2ypluj6";
 
 
 $imageDir = "images/"; 
