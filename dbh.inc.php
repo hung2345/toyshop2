@@ -4,6 +4,7 @@ $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbn
 $username = "xlhesq94xvzyf60h";
 $dbPassword = "amxptd4snfzgsxo3";
 
+
 try {
   $conn = new PDO($dsn, $username, $password);
   echo "Database connection successful.\n"; 
