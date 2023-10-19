@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (move_uploaded_file($_FILES['image']['tmp_name'], $img)) {
       $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=mciszm142ho9bdsl";
       $username = "xlhesq94xvzyf60h";
-      $dbPassword = "amxptd4snfzgsxo3";
+      $dbPassword = "NO";
       
 
         try {

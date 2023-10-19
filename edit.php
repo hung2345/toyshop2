@@ -3,7 +3,7 @@ session_start();
 
 $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=mciszm142ho9bdsl";
 $username = "xlhesq94xvzyf60h";
-$dbPassword = "amxptd4snfzgsxo3";
+$dbPassword = "NO";
 
 
 try {
