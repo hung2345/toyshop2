@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$dsn = "mysql:host=localhost;dbname=toyshop";
-$dbUsername = "root";
-$dbPassword = "";
+$dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	;dbname=qgyyv66sajzo5orn";
+$username = "lab1us2jro0sahrp";
+$dbPassword = "dkrhfrnfumjp0h33";
 
 try {
     $conn = new PDO($dsn, $dbUsername, $dbPassword);
@@ -178,8 +178,9 @@ if (isset($_GET['ToyID'])) {
             </div>
             <div class="form-group">
                 <label for="new_image">Image:</label>
-                <input type="file" name="new_image" id="new_image" accept="image/*">
-            </div>
+                <input type="file" name="new_image" id="new_image" accept="image/*" required>
+                </div>
+
             <button type="submit" class="update-button">Update</button>
         </form>
         <a href="index.php">Back to Product List</a>
