@@ -6,9 +6,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
    
-    $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=erf4p42dq0r2dxvv";
-    $username = "h9h1633x6ek8iw6v";
-    $password = "fjyr5bd0t2ypluj6";
+    $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
+    $username = "dolspoxwgf3anvkc";
+    $password = "vvvlinl8ngt5rjnp";
     
 
     try {
