@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-$dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
-$username = "dolspoxwgf3anvkc";
-$password = "vvvlinl8ngt5rjnp"; 
+  $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
+  $username = "dolspoxwgf3anvkc";
+  $Password = "vvvlinl8ngt5rjnp"; 
 
 
 try {
-    $conn = new PDO($dsn, $dbUsername, $dbPassword);
+    $conn = new PDO($dsn, $Username, $Password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
@@ -19,8 +19,8 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-if (isset($_GET['toyid'])) {
-    $toyid = $_GET['toyid'];
+if (isset($_GET['ToyID'])) {
+    $ToyID = $_GET['ToyID'];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $newToyName = $_POST['new_toy_name'];
@@ -49,7 +49,7 @@ if (isset($_GET['toyid'])) {
             Product_import_staff = :newProductImportStaff,
             Shop_ID = :newShopID,
             image = :newimage
-            WHERE toyid = :toyid";
+            WHERE ToyID = :ToyID";
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':newToyName', $newToyName);
@@ -61,7 +61,7 @@ if (isset($_GET['toyid'])) {
         $stmt->bindParam(':newProductImportStaff', $newProductImportStaff);
         $stmt->bindParam(':newShopID', $newShopID);
         $stmt->bindParam(':newimage', $img);
-        $stmt->bindParam(':toyid', $toyid);
+        $stmt->bindParam(':ToyID', $ToyID);
 
         if ($stmt->execute()) {
             header("Location: clientforstaff.php");
@@ -71,9 +71,9 @@ if (isset($_GET['toyid'])) {
         }
     }
 
-    $sql = "SELECT * FROM toy WHERE toyid = :toyid";
+    $sql = "SELECT * FROM toy WHERE ToyID = :ToyID";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':toyid', $toyid);
+    $stmt->bindParam(':ToyID', $ToyID);
     $stmt->execute();
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
 } else {
