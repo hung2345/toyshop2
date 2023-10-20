@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $staffID = $_POST["staffID"];
   $staffName = $_POST["staffName"];
   $email = $_POST["email"];
-  $password = $_POST["password"];
+  $password = $_POST["pass"];
   $phone = $_POST["phone"];
   $shopID = $_POST["shopID"];
 
@@ -30,15 +30,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errorMessage = "Staff member with this StaffID already exists. Please choose a different StaffID.";
   } else {
     try {
-      $sql = "INSERT INTO staff (StaffID, StaffName, Email, Password, Phone, ShopID) 
-              VALUES (:staffID, :staffName, :email, :password, :phone, :shopID)";
+      $sql = "INSERT INTO staff (StaffID, StaffName, Email, Pass, Phone, ShopID) 
+              VALUES (:staffID, :staffName, :email, :pass, :phone, :shopID)";
 
       $stmt = $conn->prepare($sql);
 
       $stmt->bindParam(":staffID", $staffID);
       $stmt->bindParam(":staffName", $staffName);
       $stmt->bindParam(":email", $email);
-      $stmt->bindParam(":password", $password);
+      $stmt->bindParam(":pass", $pass);
       $stmt->bindParam(":phone", $phone);
       $stmt->bindParam(":shopID", $shopID);
 
@@ -74,8 +74,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="email" id="email" name="email" required>
       </div>
       <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="pass">Password:</label>
+        <input type="pass" id="password" name="pass" required>
       </div>
       <div class="form-group">
         <label for="phone">Phone:</label>
