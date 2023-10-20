@@ -6,13 +6,13 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=szkxb7ct1fwgse6d";
-$username = "ogaic1ypob79nncp";
-$password = "swvruoxd0liezltn";
+$dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=erf4p42dq0r2dxvv";
+$username = "h9h1633x6ek8iw6v";
+$password = "fjyr5bd0t2ypluj6";
 
 
 try {
-    $conn = new PDO($dsn, $username, $password);
+    $conn = new PDO($dsn, $dbUsername, $dbPassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_product"])) {
 
 $stmt = $conn->query("SELECT * FROM toy");
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -100,50 +101,50 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <header>
-    <h1>Welcome, Staff Member! <a href="index.php" style="float: left;">Home</a></h1>
-</header>
+        <h1>Welcome, Staff Member! <a href="index.php" style="float: left;">Home</a></h1>
+    </header>
 
-<div class="container">
-    <h2>Product List</h2>
-    <button><a href="add.php">Add Product</a></button>
-    <button><a href="add_staff.php">Add Staff</a></button>
-    <button><a href="indexshop.php">Add Shop</a></button>
-    <table>
-        <thead>
-        <tr>
-            <th>Toy Name</th>
-            <th>Description</th>
-            <th>Original Price</th>
-            <th>Selling Price</th>
-            <th>Quantity</th>
-            <th>Import Date</th>
-            <th>Import Staff</th>
-            <th>Shop ID</th>
-            <th>Supplier ID</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($products as $product) : ?>
-            <tr>
-                <td><?= $product['Toy_Name'] ?></td>
-                <td><?= $product['Description'] ?></td>
-                <td><?= $product['Original_price'] ?></td>
-                <td><?= $product['Selling_price'] ?></td>
-                <td><?= $product['Quantity'] ?></td>
-                <td><?= $product['Product_import_date'] ?></td>
-                <td><?= $product['Product_import_staff'] ?></td>
-                <td><?= $product['Shop_ID'] ?></td>
-                <td><?= $product['Supplier_ID'] ?></td>
-                <td>
-                    <button><a href="edit.php?ToyID=<?= $product['ToyID']?>">Edit</a></button>
-                    <button><a href="remove.php?ToyID=<?= $product['ToyID']?>">Remove</a></button>
-                    <button><a href="product_details.php?ToyID=<?= $product['ToyID']?>">Details</a></button>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
+    <div class="container">
+        <h2>Product List</h2>
+        <button><a href="add.php">Add Product</a></button>
+        <button><a href="add_staff.php">Add Staff</a></button>
+        <button><a href="indexshop.php">Add Shop</a></button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Toy Name</th>
+                    <th>Description</th>
+                    <th>Original Price</th>
+                    <th>Selling Price</th>
+                    <th>Quantity</th>
+                    <th>Import Date</th>
+                    <th>Import Staff</th>
+                    <th>Shop ID</th>
+                    <th>Supplier ID</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($products as $product) : ?>
+                    <tr>
+                        <td><?= $product['Toy_Name'] ?></td>
+                        <td><?= $product['Description'] ?></td>
+                        <td><?= $product['Original_price'] ?></td>
+                        <td><?= $product['Selling_price'] ?></td>
+                        <td><?= $product['Quantity'] ?></td>
+                        <td><?= $product['Product_import_date'] ?></td>
+                        <td><?= $product['Product_import_staff'] ?></td>
+                        <td><?= $product['Shop_ID'] ?></td>
+                        <td><?= $product['Supplier_ID'] ?></td>
+                        <td>
+                            <button><a href="edit.php?ToyID=<?= $product['ToyID']?>">Edit</a></button>
+                            <button><a href="remove.php?ToyID=<?= $product['ToyID']?>">Remove</a></button>
+                            <button><a href="product_details.php?ToyID=<?= $product['ToyID']?>">Details</a></button>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
