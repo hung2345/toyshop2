@@ -10,12 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
   $username = "dolspoxwgf3anvkc";
   $password = "vvvlinl8ngt5rjnp"; 
-
+  
+  
   try {
-    $conn = new PDO($dsn, $username, $dbPassword);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $conn = new PDO($dsn, $username, $password);
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   } catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+      echo "Connection failed: " . $e->getMessage();
+      exit;
   }
 
   $checkSql = "SELECT COUNT(*) FROM staff WHERE StaffID = :staffID";
@@ -63,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="staffID">Staff ID:</label>
         <input type="text" id="staffID" name="staffID" required>
       </div>
-      <div class "form-group">
+      <div class="form-group">
         <label for="staffName">Staff Name:</label>
         <input type="text" id="staffName" name="staffName" required>
       </div>

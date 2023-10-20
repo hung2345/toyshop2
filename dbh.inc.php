@@ -6,10 +6,11 @@ $password = "vvvlinl8ngt5rjnp";
 
 
 try {
-  $conn = new PDO($dsn, $username, $password);
-  echo "Database connection successful.\n"; 
+    $conn = new PDO($dsn, $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-  die("Connection error: " . $e->getMessage());
+    echo "Connection failed: " . $e->getMessage();
+    exit;
 }
 
 

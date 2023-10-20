@@ -21,13 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $username = "dolspoxwgf3anvkc";
       $password = "vvvlinl8ngt5rjnp"; 
       
-
-        try {
-            $conn = new PDO($dsn, $username, $password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            die("Connection failed: " . $e->getMessage());
-        }
+      
+      try {
+          $conn = new PDO($dsn, $username, $password);
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } catch (PDOException $e) {
+          echo "Connection failed: " . $e->getMessage();
+          exit;
+      }
 
         $shopCheckSql = "SELECT COUNT(*) FROM shop WHERE ShopID = :shopID";
         $shopCheckStmt = $conn->prepare($shopCheckSql);
