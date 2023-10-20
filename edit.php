@@ -19,8 +19,8 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-if (isset($_GET['ToyID'])) {
-    $ToyID = $_GET['ToyID'];
+if (isset($_GET['toyid'])) {
+    $toyid = $_GET['toyid'];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $newToyName = $_POST['new_toy_name'];
@@ -49,7 +49,7 @@ if (isset($_GET['ToyID'])) {
             Product_import_staff = :newProductImportStaff,
             Shop_ID = :newShopID,
             image = :newimage
-            WHERE ToyID = :ToyID";
+            WHERE toyid = :toyid";
 
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':newToyName', $newToyName);
@@ -61,7 +61,7 @@ if (isset($_GET['ToyID'])) {
         $stmt->bindParam(':newProductImportStaff', $newProductImportStaff);
         $stmt->bindParam(':newShopID', $newShopID);
         $stmt->bindParam(':newimage', $img);
-        $stmt->bindParam(':ToyID', $ToyID);
+        $stmt->bindParam(':toyid', $toyid);
 
         if ($stmt->execute()) {
             header("Location: clientforstaff.php");
@@ -71,9 +71,9 @@ if (isset($_GET['ToyID'])) {
         }
     }
 
-    $sql = "SELECT * FROM toy WHERE ToyID = :ToyID";
+    $sql = "SELECT * FROM toy WHERE toyid = :toyid";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':ToyID', $ToyID);
+    $stmt->bindParam(':toyid', $toyid);
     $stmt->execute();
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
 } else {
