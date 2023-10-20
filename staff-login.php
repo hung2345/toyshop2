@@ -10,15 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = "ogaic1ypob79nncp";
     $password = "swvruoxd0liezltn";
     
-    try {
-         $db = new PDO($dsn, $username, $password);
-         // Set additional options if needed
-         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-         echo "Connected successfully!";
-    } catch (PDOException $e) {
-         die("Connection error: " . $e->getMessage());
-    }
+  
     
 
     try {
