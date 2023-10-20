@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-  $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
-  $username = "dolspoxwgf3anvkc";
-  $Password = "vvvlinl8ngt5rjnp"; 
+$dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
+$username = "dolspoxwgf3anvkc";
+$password = "vvvlinl8ngt5rjnp"; 
 
 
 try {
-    $conn = new PDO($dsn, $Username, $Password);
+    $conn = new PDO($dsn, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
