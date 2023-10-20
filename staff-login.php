@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
     $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=erf4p42dq0r2dxvv";
     $username = "h9h1633x6ek8iw6v";
-    $password = "fjyr5bd0t2ypluj6";
+    $password = "fjyr5bd0t2ypluj6";    
     
 
     try {
