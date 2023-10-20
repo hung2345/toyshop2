@@ -7,10 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $phone = $_POST["phone"];
   $shopID = $_POST["shopID"];
 
-  $dsn = "mysql:hosts29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
+  $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
   $username = "dolspoxwgf3anvkc";
-  $password = "vvvlinl8ngt5rjnp";
-  
+  $dbPassword = "vvvlinl8ngt5rjnp"; 
 
   try {
     $conn = new PDO($dsn, $username, $dbPassword);
@@ -64,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="staffID">Staff ID:</label>
         <input type="text" id="staffID" name="staffID" required>
       </div>
-      <div class="form-group">
+      <div class "form-group">
         <label for="staffName">Staff Name:</label>
         <input type="text" id="staffName" name="staffName" required>
       </div>
