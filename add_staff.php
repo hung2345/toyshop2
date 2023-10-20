@@ -3,21 +3,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $staffID = $_POST["staffID"];
   $staffName = $_POST["staffName"];
   $email = $_POST["email"];
-  $password = $_POST["pass"];
+  $password = $_POST["password"];
   $phone = $_POST["phone"];
   $shopID = $_POST["shopID"];
 
-  $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
-  $username = "dolspoxwgf3anvkc";
-  $password = "vvvlinl8ngt5rjnp"; 
+  $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=erf4p42dq0r2dxvv";
+  $username = "h9h1633x6ek8iw6v";
+  $password = "fjyr5bd0t2ypluj6";
   
-  
+
   try {
-      $conn = new PDO($dsn, $username, $password);
-      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = new PDO($dsn, $username, $Password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   } catch (PDOException $e) {
-      echo "Connection failed: " . $e->getMessage();
-      exit;
+    die("Connection failed: " . $e->getMessage());
   }
 
   $checkSql = "SELECT COUNT(*) FROM staff WHERE StaffID = :staffID";
@@ -30,15 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errorMessage = "Staff member with this StaffID already exists. Please choose a different StaffID.";
   } else {
     try {
-      $sql = "INSERT INTO staff (StaffID, StaffName, Email, Pass, Phone, ShopID) 
-              VALUES (:staffID, :staffName, :email, :pass, :phone, :shopID)";
+      $sql = "INSERT INTO staff (StaffID, StaffName, Email, Password, Phone, ShopID) 
+              VALUES (:staffID, :staffName, :email, :password, :phone, :shopID)";
 
       $stmt = $conn->prepare($sql);
 
       $stmt->bindParam(":staffID", $staffID);
       $stmt->bindParam(":staffName", $staffName);
       $stmt->bindParam(":email", $email);
-      $stmt->bindParam(":pass", $pass);
+      $stmt->bindParam(":password", $password);
       $stmt->bindParam(":phone", $phone);
       $stmt->bindParam(":shopID", $shopID);
 
@@ -74,8 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="email" id="email" name="email" required>
       </div>
       <div class="form-group">
-        <label for="pass">Password:</label>
-        <input type="pass" id="password" name="pass" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
       </div>
       <div class="form-group">
         <label for="phone">Phone:</label>
