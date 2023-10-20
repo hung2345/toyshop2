@@ -4,6 +4,16 @@ $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;por
 $username = "ogaic1ypob79nncp";
 $password = "swvruoxd0liezltn";
 
+try {
+     $db = new PDO($dsn, $username, $password);
+     // Set additional options if needed
+     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+     echo "Connected successfully!";
+} catch (PDOException $e) {
+     die("Connection error: " . $e->getMessage());
+}
+
 
 try {
   $conn = new PDO($dsn, $username, $password);
