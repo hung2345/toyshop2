@@ -6,9 +6,9 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=erf4p42dq0r2dxvv";
-$username = "h9h1633x6ek8iw6v";
-$password = "fjyr5bd0t2ypluj6";
+$dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=szkxb7ct1fwgse6d";
+$username = "ogaic1ypob79nncp";
+$password = "swvruoxd0liezltn";
 
 
 try {
