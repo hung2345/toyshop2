@@ -11,7 +11,6 @@ $username = "ogaic1ypob79nncp";
 $password = "swvruoxd0liezltn";
 
 
-
 try {
     $conn = new PDO($dsn, $dbUsername, $dbPassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -20,10 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=szkxb7ct1fwgse6d";
       $username = "ogaic1ypob79nncp";
       $password = "swvruoxd0liezltn";
-      
-     
-      
-
+    
         try {
             $conn = new PDO($dsn, $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

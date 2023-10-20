@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=szkxb7ct1fwgse6d";
 $username = "ogaic1ypob79nncp";
 $password = "swvruoxd0liezltn";
