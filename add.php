@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $img = $imgdir . str_replace(' ', '-', $_FILES['image']['name']); 
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $img)) {
-      $dsn = "mysql:host=s29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
+      $dsn = "mysql:hosts29oj5odr85rij2o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;dbname=lm0ft0r9qtusvm42";
       $username = "dolspoxwgf3anvkc";
       $password = "vvvlinl8ngt5rjnp";
       
